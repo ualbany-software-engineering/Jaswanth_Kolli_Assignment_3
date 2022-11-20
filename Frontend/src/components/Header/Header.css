@@ -1,0 +1,11 @@
+.header-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background: rgb(2, 0, 36); */
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(6, 7, 15, 0.981) 1%, rgb(8, 28, 32) 100%);
+     */
+    /*background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=826&t=st=1668027994~exp=1668028594~hmac=8e0da2841627a86f4898fba998885d1031efd2773acc814537d48287f1964bc6");*/
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: cover;
+}

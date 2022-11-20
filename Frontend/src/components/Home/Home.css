@@ -1,0 +1,20 @@
+.card-style{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 19px;
+    border-radius: 0px;
+    border: 1px solid black;
+}
+.card-style:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.image-style{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
