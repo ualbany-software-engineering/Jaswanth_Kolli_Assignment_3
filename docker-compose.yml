@@ -1,0 +1,40 @@
+version: "3"
+services:
+  react-app:
+    build: 
+      context: ./Frontend
+      dockerfile: DockerFile.react
+    image: react-image
+    env_file: backend/.env
+    stdin_open: true
+    ports: 
+      - "3000:3000"
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+  api-server:
+    build: 
+      context: ./backend
+      dockerfile: DockerFile.express
+    image: express-image
+    ports:
+      - "3005:3005"
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-app
+    volumes:
+      - userDB:/data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  userDB:
+    driver: local
