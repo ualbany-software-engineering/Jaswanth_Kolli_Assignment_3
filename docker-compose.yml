@@ -1,40 +1,68 @@
-version: "3"
+# version: "3"
+# services:
+#   react-app:
+#     build: 
+#       context: ./Frontend
+#       dockerfile: DockerFile.react
+#     image: react-image
+#     env_file: backend/.env
+#     stdin_open: true
+#     ports: 
+#       - "3000:3000"
+#     networks:
+#       - mern-app
+#     depends_on:
+#       - mongo
+#   api-server:
+#     build: 
+#       context: ./backend
+#       dockerfile: DockerFile.express
+#     image: express-image
+#     ports:
+#       - "3005:3005"
+#     networks:
+#       - mern-app
+#     depends_on:
+#       - mongo
+#   mongo:
+#     image: mongo:latest
+#     ports:
+#       - "27017:27017"
+#     networks:
+#       - mern-app
+#     volumes:
+#       - userDB:/data/db
+# networks:
+#   mern-app:
+#     driver: bridge
+# volumes:
+#   userDB:
+#     driver: local
 services:
-  react-app:
-    build: 
+  frontend:
+    build:
       context: ./Frontend
       dockerfile: DockerFile.react
-    image: react-image
+    image: se_assignment3-frontend:latest
     env_file: backend/.env
-    stdin_open: true
-    ports: 
-      - "3000:3000"
-    networks:
-      - mern-app
+    ports:
+      - "3000:3000"   
     depends_on:
-      - mongo
-  api-server:
-    build: 
+      - db
+  nodebackend:
+    build:
       context: ./backend
       dockerfile: DockerFile.express
-    image: express-image
+    image: se_assignment3-backend:latest  
     ports:
-      - "3005:3005"
-    networks:
-      - mern-app
+      - "3005:3005"   
     depends_on:
-      - mongo
-  mongo:
+      - db
+  db:
+    volumes:
+      - profile_db:/data/db
     image: mongo:latest
     ports:
-      - "27017:27017"
-    networks:
-      - mern-app
-    volumes:
-      - userDB:/data/db
-networks:
-  mern-app:
-    driver: bridge
+      - "27017:27017" 
 volumes:
-  userDB:
-    driver: local
+   profile_db:
