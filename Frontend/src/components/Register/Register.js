@@ -46,7 +46,7 @@ const Register = () => {
         //    };
         console.log(data)
         if(data){
-            const response = await axios.post('http://localhost:3005/api/v1/users/register', data)
+            const response = await axios.post('http://ec2-3-86-255-74.compute-1.amazonaws.com:3005/api/v1/users/register', data)
             console.log(response)
             if(response?.data?.acknowledged){
                 navigate('/')

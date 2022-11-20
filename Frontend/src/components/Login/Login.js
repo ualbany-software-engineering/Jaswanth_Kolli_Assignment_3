@@ -18,7 +18,7 @@ const Login = () => {
                 password
             }
         }
-        const response = await axios.post('http://localhost:3005/api/v1/users', data)
+        const response = await axios.post('http://ec2-3-86-255-74.compute-1.amazonaws.com:3005/api/v1/users', data)
         console.log(response)
         if(response?.data?.success){
             localStorage.setItem("token", response?.data?.token)

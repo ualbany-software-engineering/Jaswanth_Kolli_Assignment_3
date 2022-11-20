@@ -5,7 +5,7 @@ import './UserCard'
 const Home = () => {
     const [users, setUsers] = useState([]);
     useEffect(()=>{
-        fetch("http://localhost:3005/api/v1/users")
+        fetch("http://ec2-3-86-255-74.compute-1.amazonaws.com:3005/api/v1/users")
         .then(res => res.json())
         .then(result => setUsers(result))
     },[])

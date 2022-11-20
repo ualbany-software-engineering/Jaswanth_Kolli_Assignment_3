@@ -21,7 +21,7 @@ const MyProfile = () => {
     const nameChange = (e) => setName(e.target.value);
     const descriptionChange = (e) => setDesc(e.target.value);
     useEffect(() => {
-        fetch(`http://localhost:3005/api/v1/users/${email}`)
+        fetch(`http://ec2-3-86-255-74.compute-1.amazonaws.com:3005/api/v1/users/${email}`)
             .then(res => res.json())
             .then(result => {
                 if (result[0]?.name) {
@@ -51,7 +51,7 @@ const MyProfile = () => {
         }
         console.log(data)
         if (data) {
-            const response = await axios.patch(`http://localhost:3005/api/v1/users/${email}`, data, config)
+            const response = await axios.patch(`http://ec2-3-86-255-74.compute-1.amazonaws.com:3005/api/v1/users/${email}`, data, config)
             console.log(response)
             if (response?.data?.acknowledged) {
                 setEdit(false)
