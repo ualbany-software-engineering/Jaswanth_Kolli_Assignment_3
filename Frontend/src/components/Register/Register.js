@@ -75,7 +75,7 @@ const Register = () => {
                             controlId="formFileLg"
                             label="Profile Picture"
                             className="mb-3">
-                            <Form.Control type="file" name='img'  placeholder="Your Image" required />
+                            <Form.Control type="text" name='img'  placeholder="Your Image" required />
                         </FloatingLabel>
                         <FloatingLabel className='mb-3' controlId="floatingTextarea2" label="Enter Your Description">
                             <Form.Control
